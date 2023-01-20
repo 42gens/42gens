@@ -22,6 +22,7 @@
 
                 
         // to populate mytable
+
         $(document).ready(function () {
             $('#mytable').DataTable({
                     ajax: {
@@ -37,10 +38,13 @@
                     [5, 15, 25, -1],
                     [5, 15, 25, 'All'],
                 ],
+            
             });
         });
+        
 
         // to populate mytable2
+                
         $(document).ready(function () {
             $('#mytable2').DataTable({
                 ajax: {
@@ -90,11 +94,12 @@
     <!--  table added-->
     
     <table id="mytable" class="cell-border compact stripe hover" style="width:100%">
-        <caption style="background-color:#6c65f7; 
-        color:white; 
+        <caption style="background-color:#34342c; 
+        color:rgb(238, 241, 243); 
         padding:14px;">KJV Bible</caption>
-        <caption style="background-color:#6c65f7; 
-        color:white; 
+        <caption style="background-color:#34342c; 
+        color:white;
+        font-weight: bold;
         padding:5px;">42gens.com</caption>
 
         <thead>
@@ -115,8 +120,9 @@
     
     <!--  2nd table added-->
     <table id="mytable2" class="cell-border compact stripe hover" style="width:100%">
-        <caption style="background-color:#085716; 
-        color:white; 
+        <caption style="background-color:#34342c; 
+        color:white;
+        font-weight: bold; 
         padding:14px;">Negative Feeling?  Here is some Good News!</caption>
         <thead>
             <tr>
@@ -138,8 +144,8 @@
 
     <!--  3rd table added-->
     <table id="mytable3" class="cell-border compact stripe hover" style="width:100%">
-        <caption style="background-color:#8cd771; 
-        color:rgb(10, 10, 10);
+        <caption style="background-color:#34342c; 
+        color:white;
         font-weight: bold;
         padding:14px;">KJV Common Questions and Answers coupled with Facts</caption>
         <thead>
