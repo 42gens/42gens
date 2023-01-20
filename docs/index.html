@@ -1,8 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>KJV Fun</title>
+<meta charset="utf-8">
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+
+<style>
+body {
+    font-family:Verdana,sans-serif;font-size:0.9em;
+}
+header,footer,section,article {
+    border:1px solid grey;
+    margin:5px;margin-bottom:15px;padding:8px;
+    background-color:white;
+}
+header,footer {
+    color:white;background-color:#444;margin-bottom:5px;
+}
+section {
+    background-color:#ddd;
+}
+nav ul {
+    margin:0;padding:0;
+}
+nav ul li {
+    display:inline; margin:5px;
+}
+</style>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>42 Generations</title>
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
@@ -51,8 +80,6 @@
                 }
             });
         });
-
-
 
         // to populate mytable3
         $(document).ready(function () {
