@@ -50,41 +50,45 @@
     <script type="text/javascript">
 
                 
-         // to populate mytable3
-         $(document).ready(function () {
-            $('#mytable3').DataTable({
-                ajax: {
-                    url: 'questionskjv1.json',
-                    dataSrc: '',
-                },
-                columns: [
-                    { data: 'id'},
-                    { data: 'Question' },
-                    { data: 'Answer' },
-                ],
-                lengthMenu: [
-                [10, 20, 25, -1],
-                [10, 20, 25, 'All'],
-                ],
+       // to populate mytable2
                 
-            });
+       $(document).ready(function () {
+        $('#mytable2').DataTable({
+            ajax: {
+                url: 'kjvfeeling3.json',
+                dataSrc: '',
+            },
+            columns: [
+                { data: 'id'},
+                { data: 'feeling' },
+                { data: 'bible_verse' },
+                { data: 'bible_message'},
+            ],
+            lengthMenu: [
+            [10, 20, 25, -1],
+            [10, 20, 25, 'All'],
+            ],
+            rowGroup: {
+                dataSrc: 'group'
+            }
         });
-
+    });
 
     </script>
 </head>
 <body>
-    <!--  3rd table added-->
-    <table id="mytable3" class="cell-border compact stripe hover" style="width:100%">
+    <!--  2nd table added-->
+    <table id="mytable2" class="cell-border compact stripe hover" style="width:100%">
         <caption style="background-color:#c4f7ca; 
         color:rgb(18, 18, 18);
-        font-weight: bold;
-        padding:14px;">KJV Common Questions and Answers coupled with Facts</caption>
+        font-weight: bold; 
+        padding:14px;">Negative Feeling?  Here is some Good News!</caption>
         <thead>
             <tr>
                 <th>id</th>
-                <th>Questions</th>
-                <th>Answers</th>
+                <th>Feeling</th>
+                <th>Book</th>
+                <th>The Good Word</th>
             </tr>
         </thead>
     </table>
@@ -92,8 +96,8 @@
     <form action="http://127.0.0.1:5500/index.html" method="GET">
         <button type="submit">KJV Bible</button>
         </form>
-    <form action="http://127.0.0.1:5500/index_pv.html" method="GET">
-        <button type="submit">Positive Verses</button>
+    <form action="http://127.0.0.1:5500/index_qa.html" method="GET">
+        <button type="submit">Bible Questions and Answers</button>
         </form>
     </div>
     
