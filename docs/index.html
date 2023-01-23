@@ -11,37 +11,8 @@
 </script>
 <![endif]-->
 
-<!--centering a button-->
 
-
-<style type="text/css" class="init">
-
-    .btn-group button {
-        background-color: #04AA6D; /* Green background */
-        border: 1px solid green; /* Green border */
-        color: white; /* White text */
-        padding: 4px 18px; /* Some padding */
-        cursor: pointer; /* Pointer/hand icon */
-        float: left; /* Float the buttons side by side */
-      }
-      
-      /* Clear floats (clearfix hack) */
-      .btn-group:after {
-        content: "";
-        clear: both;
-        display: table;
-      }
-      
-      .btn-group button:not(:last-child) {
-        border-right: none; /* Prevent double borders */
-      }
-      
-      /* Add a background color on hover */
-      .btn-group button:hover {
-        background-color: #3e8e41;
-      }
-    
-</style>
+<style type="text/css" class="init"></style>
 
 <head>
     <title>42 Generations</title>
@@ -51,7 +22,6 @@
 
                 
         // to populate mytable
-
         $(document).ready(function () {
             $('#mytable').DataTable({
                     ajax: {
@@ -64,14 +34,55 @@
                     { data: 'verse' },
                 ],
                 lengthMenu: [
-                    [10, 20, 30, -1],
-                    [10, 20, 30, 'All'],
+                    [10, 20, 25, -1],
+                    [10, 20, 25, 'All'],
                 ],
             
             });
         });
         
+       // to populate mytable2
+       $(document).ready(function () {
+        $('#mytable2').DataTable({
+            ajax: {
+                url: 'kjvfeeling3.json',
+                dataSrc: '',
+            },
+            columns: [
+                { data: 'id'},
+                { data: 'feeling' },
+                { data: 'bible_verse' },
+                { data: 'bible_message'},
+            ],
+            lengthMenu: [
+            [12, 24, 34, -1],
+            [12, 24, 34, 'All'],
+            ],
+            rowGroup: {
+                dataSrc: 'group'
+            }
+        });
+    });
 
+       // to populate mytable3
+       $(document).ready(function () {
+        $('#mytable3').DataTable({
+            ajax: {
+                url: 'questionskjv1.json',
+                dataSrc: '',
+            },
+            columns: [
+                { data: 'id'},
+                { data: 'Question' },
+                { data: 'Answer' },
+            ],
+            lengthMenu: [
+            [12, 24, 34, -1],
+            [12, 24, 34, 'All'],
+            ],
+            
+        });
+    });
 
 
     </script>
@@ -79,13 +90,13 @@
 <body>
     <!--  table added-->
     
-    <table id="mytable" class="cell-border compact stripe hover" style="width:10px;height:10px;background-color:#ffcc00; width:100%">
-        <caption style="background-color:#04AA6D; 
-        color:rgb(252, 247, 247);
+    <table id="mytable" class="cell-border compact stripe hover" style="width:5px;height:5px;background-color:#d3ebf7; width:100%">
+        <caption style="background-color:#b6cfdb; 
+        color:rgb(48, 51, 58);
         font-weight: bold;
         padding:7px;">KJV Bible</caption>
-        <caption style="background-color:#04AA6D; 
-        color:rgb(252, 247, 247);
+        <caption style="background-color:#b6cfdb; 
+        color:rgb(48, 51, 58);
         font-weight: bold;
         padding:4px;">42gens.com</caption>
 
@@ -99,12 +110,43 @@
 
     </table>
     
-    <form action="./index_pv.html" method="GET">
-        <button type="submit" style="background-color:rgb(185, 239, 185); border-color:rgb(185, 239, 185)">Positive Verses</button>
-        </form>
-    <form action="./index_qa.html" method="GET">
-        <button type="submit" style="background-color:rgb(185, 239, 185); border-color:rgb(185, 239, 185)">Bible Questions and Answers</button>
-        </form>
+    <!--  2nd table added-->
+    <table id="mytable2" class="cell-border compact stripe hover" style="width:5px;height:5px;background-color:#c7f8d1; width:100%">
+        <caption style="background-color:#418e51; 
+        color:#ecede8;
+        font-weight: bold; 
+        padding:14px;">Negative Feeling?  Here is some Good News!</caption>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Feeling</th>
+                <th>Book</th>
+                <th>The Good Word</th>
+            </tr>
+        </thead>
+    </table>
+
+   <!--  3rd table added-->
+   <table id="mytable3" class="cell-border compact stripe hover" style="width:5px; height:5px; background-color:#d4d0e8; width:100%">
+    <caption style="background-color:#6152d0; 
+    color:#f7f752;
+    font-weight: bold;
+    padding:14px;">KJV Common Questions and Answers coupled with Facts</caption>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Question</th>
+            <th>Answer</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>id</th>
+            <th>Question</th>
+            <th>Answer</th>
+        </tr>
+    </tfoot>
+</table>
     
     
 </body>
